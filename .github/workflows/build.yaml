@@ -14,6 +14,6 @@ jobs:
     steps:
       - name: Build and push container test
         run: |
-          /kaniko/executor --dockerfile="/Dockerfile.test" \
+          /kaniko/executor --dockerfile="/Dockerfile" \
             --context="git://github.com/aswin-vijayan/eks-runner.git" \
             --destination="637423664276.dkr.ecr.us-west-2.amazonaws.com/java-app:1.0.0"
