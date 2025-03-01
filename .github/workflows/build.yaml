@@ -14,7 +14,3 @@ jobs:
     steps:
       - name: Checkout Another Repository
         uses: actions/checkout@v4
-
-      - name: Build and push container test
-        run: |
-          ls
