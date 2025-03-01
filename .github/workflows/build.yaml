@@ -12,5 +12,8 @@ jobs:
       image: gcr.io/kaniko-project/executor:debug
 
     steps:
-      - name: Checkout Another Repository
-        uses: actions/checkout@v4
+      - name: Build and push container test
+        run: |
+          /kaniko/executor --dockerfile="/Dockerfile.test" \
+            --context="git://github.com/aswin-vijayan/eks-runner.git" \
+            --destination="637423664276.dkr.ecr.us-west-2.amazonaws.com/java-app:1.0.0"
