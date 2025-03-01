@@ -14,9 +14,6 @@ jobs:
     steps:
       - name: Checkout Another Repository
         uses: actions/checkout@v4
-        with:
-          repository: "https://github.com/aswin-vijayan/java-app.git"
-          ref: "main"
 
       - name: Build and push container test
         run: |
