@@ -1,0 +1,23 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: arc-runner-set
+    container:
+      image: gcr.io/kaniko-project/executor:debug
+
+    steps:
+      - name: Checkout Another Repository
+        uses: actions/checkout@v4
+        with:
+          repository: "https://github.com/aswin-vijayan/java-app.git"
+          ref: "main"
+
+      - name: Build and push container test
+        run: |
+          ls
